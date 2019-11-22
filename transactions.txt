@@ -1,0 +1,6 @@
+name, topping, flavor, cash in, cash out
+Jefferson, sprinkles, strawberry, 5.00, 4.25
+Devin, piping, vanilla, 3.45
+kflde, sprinkles, strawberry, 3.44
+Oscar, piping, vanilla, 4.67
+nate, piping, chocolate, 3.50
