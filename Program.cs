@@ -91,13 +91,14 @@ namespace dotnet_donet_shop
             }
         }
 
-        static void WriteTransaction(string name, string toppings, string flavors, decimal money)
+        static void WriteTransaction(string name, string toppings, string flavors, decimal money, decimal cashOut)
         {
-            File.AppendAllText("./transactions.txt", $"\n{name}, {toppings}, {flavors}, {money}");
+            File.AppendAllText("./transactions.txt", $"\n{name}, {toppings}, {flavors}, {money}, {cashOut}");
         }
 
         static void Main(string[] args)
         {
+            decimal donutPrice = 0.75M;
             Console.Write("What's your name: ");
             string name = Console.ReadLine();
             Inventory donutShop = loadMenu();
@@ -106,8 +107,9 @@ namespace dotnet_donet_shop
             string flavor = getFlavor(donutShop);
             Console.Write("How much would you like to pay?: ");
             decimal money = Convert.ToDecimal(Console.ReadLine());
+            decimal cashOut = donutPrice - money;
             Console.WriteLine($"{name} has ordered a {flavor} flavored donut topped with {topping} for ${money}");
-            WriteTransaction(name, topping, flavor, money);
+            WriteTransaction(name, topping, flavor, money, cashOut);
         }
     }
 }
